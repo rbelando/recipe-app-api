@@ -12,8 +12,8 @@ class UserManager(BaseUserManager):
         self, email: str, password: str = None, **extra_fields
     ) -> Model:
         """Create and saves a new user"""
-        # self.model() can acces the model that the manager is for. Is effectively
-        # the same as creating a new user model.
+        # self.model() can acces the model that the manager is for.
+        # Is effectively the same as creating a new user model.
         if not email:
             raise ValueError("Users must have an email adress")
         user = self.model(email=self.normalize_email(email), **extra_fields)
